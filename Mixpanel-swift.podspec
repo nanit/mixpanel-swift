@@ -1,15 +1,15 @@
 Pod::Spec.new do |s|
   s.name = 'Mixpanel-swift'
-  s.version = '4.2.0'
+  s.version = '4.2.0-sqlcipher'
   s.module_name = 'Mixpanel'
   s.license = 'Apache License, Version 2.0'
   s.summary = 'Mixpanel tracking library for iOS (Swift)'
   s.swift_version = '5.0'
   s.homepage = 'https://mixpanel.com'
   s.author       = { 'Mixpanel, Inc' => 'support@mixpanel.com' }
-  s.source       = { :git => 'https://github.com/mixpanel/mixpanel-swift.git',
+  s.source       = { :git => 'https://github.com/nanit/mixpanel-swift.git',
                      :tag => "v#{s.version}" }
-  s.ios.deployment_target = '11.0'
+  s.ios.deployment_target = '13.0'
   s.ios.frameworks = 'UIKit', 'Foundation', 'CoreTelephony'
   s.ios.pod_target_xcconfig = {
     'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '$(inherited) IOS'
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
     'Sources/Flush.swift','Sources/Track.swift', 'Sources/People.swift', 'Sources/AutomaticEvents.swift',
     'Sources/Group.swift',
     'Sources/ReadWriteLock.swift', 'Sources/SessionMetadata.swift', 'Sources/MPDB.swift', 'Sources/MixpanelPersistence.swift']
-  s.tvos.deployment_target = '11.0'
+  s.tvos.deployment_target = '12.0'
   s.tvos.frameworks = 'UIKit', 'Foundation'
   s.tvos.pod_target_xcconfig = {
     'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '$(inherited) TV_OS'
@@ -32,7 +32,7 @@ Pod::Spec.new do |s|
     'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '$(inherited) MAC_OS'
   }
 
-  s.watchos.deployment_target = '4.0'
+  s.watchos.deployment_target = '7.0'
   s.watchos.pod_target_xcconfig = {
     'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '$(inherited) WATCH_OS'
   }
@@ -50,4 +50,6 @@ Pod::Spec.new do |s|
     ss.osx.source_files = base_source_files
     ss.watchos.source_files = base_source_files
   end
+
+  s.dependency 'SQLCipher', '~> 4.5.4'
 end
