@@ -7,10 +7,10 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.homepage = 'https://mixpanel.com'
   s.author       = { 'Mixpanel, Inc' => 'support@mixpanel.com' }
-  s.source       = { :git => 'https://github.com/mixpanel/mixpanel-swift.git',
+  s.source       = { :git => 'https://github.com/nanit/mixpanel-swift.git',
                      :tag => "v#{s.version}" }
   s.resource_bundles = {'Mixpanel' => ['Sources/Mixpanel/PrivacyInfo.xcprivacy']}
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '13.0'
   s.ios.frameworks = 'UIKit', 'Foundation', 'CoreTelephony'
   s.ios.pod_target_xcconfig = {
     'SWIFT_ACTIVE_COMPILATION_CONDITIONS' => '$(inherited) IOS'
